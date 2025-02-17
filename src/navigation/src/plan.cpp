@@ -145,15 +145,15 @@ int main(int argc, char* argv[])
                 ), 0, -1);
             }
             // cv::circle(map, Point(position.x, position.y), self, 0xFF, -1);
-            int xs = position.x;//baselink在map的坐标
+            int xs = position.x;
             int ys = position.y;
             xs = std::min(std::max(xs, 0), map.cols - 1);
             ys = std::min(std::max(ys, 0), map.rows - 1);
-            if (!map.at<uchar>(start.y,start.x))
+            if (!map.at<uchar>(ys,xs))
             {
-                pp::int2D p = pp::bfs(map, start.x, start.y, 0);//step;
+                pp::int2D p = pp::bfs(map, xs, ys, 0);//step;
                 int x = p.first, y = p.second;
-                int xss = start.x, yss = start.y;
+                int xss = xs, yss = ys;
                 if(xss > x) swap(x, xss);
                 if(yss > y) swap(y, yss);
                
