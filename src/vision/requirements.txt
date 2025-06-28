@@ -3,4 +3,4 @@ torch
 torchvision
 pyrealsense2
 opencv-python
-onnxruntime-gpu
+# onnxruntime-gpu
